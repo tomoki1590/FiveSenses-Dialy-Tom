@@ -1,28 +1,27 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
-import 'package:flutter_riverpod/flutter_riverpod.dart';
 
-import 'home_screen.dart';
+import 'horizontal/screen/cover_page.dart';
 
-Future<void> main() async {
-  SystemChrome.setPreferredOrientations(
-          [DeviceOrientation.landscapeLeft, DeviceOrientation.landscapeRight])
-      .then((_) => {
-            runApp(
-              const ProviderScope(child: fiveSensesDiary()),
-            )
-          });
+main() {
+  runApp(
+    fiveSensesDiary(),
+  );
 }
 
-class fiveSensesDiary extends StatelessWidget {
+class fiveSensesDiary extends StatefulWidget {
   const fiveSensesDiary({Key? key}) : super(key: key);
 
   @override
+  State<fiveSensesDiary> createState() => _fiveSensesDiaryState();
+}
+
+class _fiveSensesDiaryState extends State<fiveSensesDiary> {
+  @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return const MaterialApp(
       title: "FiveSensesDiary",
-      home: HomeScreen(),
+      home: CoverPage(),
     );
   }
 }
