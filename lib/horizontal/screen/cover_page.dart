@@ -1,17 +1,18 @@
-import 'package:five_senses_dialy/horizontal/login/login_page.dart';
+import 'package:five_senses_dialy/horizontal/screen/new_page.dart';
+import 'package:five_senses_dialy/horizontal/screen/old_page.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 
-class CoverPage extends StatelessWidget {
+class CoverPage extends ConsumerWidget {
   const CoverPage({Key? key}) : super(key: key);
 
   final String category = '五感観察日記';
   final String tittle = 'FiveSenses';
-  final String login = 'login';
   final String newData = '新しく記入';
   final String data = 'これまでの作品';
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context, WidgetRef ref) {
     var screenwidth = MediaQuery.of(context).size.width;
     var screenheight = MediaQuery.of(context).size.height;
     print('横幅の論理ピクセル:$screenwidth');
@@ -38,27 +39,28 @@ class CoverPage extends StatelessWidget {
               left: 150,
             ),
             Positioned(
-                top: 200,
-                right: 150,
-                child: OutlinedButton(
+              child: OutlinedButton(
                   onPressed: () {
                     Navigator.push(
                         context,
                         MaterialPageRoute(
-                          builder: (context) => LoginPage(),
-                        ));
+                            builder: (context) => const NewPage()));
                   },
-                  child: Text(login),
-                )),
-            Positioned(
-              child: OutlinedButton(onPressed: () {}, child: Text(newData)),
+                  child: Text(newData)),
               top: 300,
               right: 250,
             ),
             Positioned(
-              child: OutlinedButton(onPressed: () {}, child: Text(data)),
+              child: OutlinedButton(
+                  onPressed: () {
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => const OldPage()));
+                  },
+                  child: Text(data)),
               top: 300,
-              right: 30,
+              left: 250,
             ),
           ],
         ),

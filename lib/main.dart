@@ -1,25 +1,20 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 import 'horizontal/screen/cover_page.dart';
 
 main() {
   runApp(
-    fiveSensesDiary(),
+    ProviderScope(child: fiveSensesDiary()),
   );
 }
 
-class fiveSensesDiary extends StatefulWidget {
+class fiveSensesDiary extends StatelessWidget {
   const fiveSensesDiary({Key? key}) : super(key: key);
-
-  @override
-  State<fiveSensesDiary> createState() => _fiveSensesDiaryState();
-}
-
-class _fiveSensesDiaryState extends State<fiveSensesDiary> {
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
+    return MaterialApp(
       title: "FiveSensesDiary",
       home: CoverPage(),
     );

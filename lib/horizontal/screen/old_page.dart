@@ -1,16 +1,16 @@
+import 'package:five_senses_dialy/horizontal/screen/add.dart';
+import 'package:five_senses_dialy/horizontal/screen/basic.dart';
 import 'package:five_senses_dialy/horizontal/screen/hand_written.dart';
+import 'package:five_senses_dialy/horizontal/screen/result.dart';
 import 'package:five_senses_dialy/horizontal/screen/tag.dart';
+import 'package:five_senses_dialy/horizontal/screen/write.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
-import 'add.dart';
-import 'basic.dart';
 import 'image_page.dart';
-import 'result.dart';
-import 'write.dart';
 
-class NewPage extends ConsumerWidget {
-  const NewPage({Key? key}) : super(key: key);
+class OldPage extends ConsumerWidget {
+  const OldPage({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
