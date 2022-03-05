@@ -1,13 +1,12 @@
-import 'package:five_senses_dialy/horizontal/screen/add.dart';
-import 'package:five_senses_dialy/horizontal/screen/basic.dart';
-import 'package:five_senses_dialy/horizontal/screen/hand_written.dart';
-import 'package:five_senses_dialy/horizontal/screen/result.dart';
-import 'package:five_senses_dialy/horizontal/screen/tag.dart';
+import 'package:five_senses_dialy/horizontal/screen/cover/basic.dart';
+import 'package:five_senses_dialy/horizontal/screen/cover/hand_written.dart';
+import 'package:five_senses_dialy/horizontal/screen/cover/result.dart';
+import 'package:five_senses_dialy/horizontal/screen/cover/tag.dart';
 import 'package:five_senses_dialy/horizontal/screen/write.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
-import 'image_page.dart';
+import 'cover/image_page.dart';
 
 class OldPage extends ConsumerWidget {
   const OldPage({Key? key}) : super(key: key);

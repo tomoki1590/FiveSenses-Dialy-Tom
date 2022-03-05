@@ -1,4 +1,4 @@
-import 'package:five_senses_dialy/horizontal/screen/tag.dart';
+import 'package:five_senses_dialy/horizontal/screen/cover/tag.dart';
 import 'package:flutter/material.dart';
 
 class BasicData extends StatelessWidget {

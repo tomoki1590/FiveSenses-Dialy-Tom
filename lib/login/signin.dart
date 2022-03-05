@@ -6,6 +6,13 @@ class SignIn extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    return Scaffold();
+    return Scaffold(
+      appBar: AppBar(title: Text('登録'),),
+      body:Column(
+        children:[
+          TextField(),
+        ]
+      )
+    );
   }
 }

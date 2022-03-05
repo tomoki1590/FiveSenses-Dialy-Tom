@@ -1,13 +1,11 @@
-import 'package:five_senses_dialy/horizontal/screen/hand_written.dart';
-import 'package:five_senses_dialy/horizontal/screen/tag.dart';
+import 'package:five_senses_dialy/horizontal/screen/cover/basic.dart';
+import 'package:five_senses_dialy/horizontal/screen/cover/hand_written.dart';
+import 'package:five_senses_dialy/horizontal/screen/cover/image_page.dart';
+import 'package:five_senses_dialy/horizontal/screen/cover/result.dart';
+import 'package:five_senses_dialy/horizontal/screen/cover/tag.dart';
+import 'package:five_senses_dialy/horizontal/screen/write.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-
-import 'add.dart';
-import 'basic.dart';
-import 'image_page.dart';
-import 'result.dart';
-import 'write.dart';
 
 class NewPage extends ConsumerWidget {
   const NewPage({Key? key}) : super(key: key);
@@ -23,7 +21,6 @@ class NewPage extends ConsumerWidget {
       TabInfo('資料2', ImagePage()),
       TabInfo('手書き', Handwritten()),
       TabInfo('記述', Write()),
-      TabInfo('まとめ', Result()),
     ];
     return DefaultTabController(
       length: tabs.length,
@@ -40,7 +37,15 @@ class NewPage extends ConsumerWidget {
               }).toList(),
             ),
           ),
-          title: Text('Tab'),
+          title: Text('New'),
+          actions: [
+            ElevatedButton(
+                onPressed: () {
+                  Navigator.push(context,
+                      MaterialPageRoute(builder: (context) => Result()));
+                },
+                child: Text('保存'))
+          ],
         ),
         body: TabBarView(
           children: tabs.map((tab) => tab.widget).toList(),
