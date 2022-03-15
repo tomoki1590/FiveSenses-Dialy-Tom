@@ -18,6 +18,13 @@ class Result extends StatelessWidget {
       body: SingleChildScrollView(
         child: Column(
           children: [
+            Text('タイトル'),
+            Text('作成日'),
+            Text('資料１のデータ'),
+            Text('選んだ項目とその内容'),
+            Text('文章'),
+            Text('文章'),
+            Text('文章'),
             Text('資料１のデータ'),
             Text('選んだ項目とその内容'),
             Text('資料１のデータ'),
@@ -26,18 +33,8 @@ class Result extends StatelessWidget {
             Text('選んだ項目とその内容'),
             Text('資料１のデータ'),
             Text('選んだ項目とその内容'),
-            Text('資料１のデータ'),
-            Text('選んだ項目とその内容'),
-            Text('資料１のデータ'),
-            Text('選んだ項目とその内容'),
-            Text('資料１のデータ'),
-            Text('選んだ項目とその内容'),
-            Text('資料１のデータ'),
-            Text('選んだ項目とその内容'),
-            Text('資料１のデータ'),
-            Text('選んだ項目とその内容'),
-            Text('資料１のデータ'),
-            Text('選んだ項目とその内容'),
+            Text('手書き'),
+            Text('イメージ図'),
             Image.network(
                 'https://www.hiroshima-navi.or.jp/event/uploads/380ea1a6122bed1d348c6bdf80576f951fff9d23.jpg'),
             Image.network(

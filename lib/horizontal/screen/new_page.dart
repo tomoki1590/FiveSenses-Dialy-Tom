@@ -1,9 +1,8 @@
-import 'package:five_senses_dialy/horizontal/screen/cover/basic.dart';
-import 'package:five_senses_dialy/horizontal/screen/cover/hand_written.dart';
-import 'package:five_senses_dialy/horizontal/screen/cover/image_page.dart';
-import 'package:five_senses_dialy/horizontal/screen/cover/result.dart';
-import 'package:five_senses_dialy/horizontal/screen/cover/tag.dart';
-import 'package:five_senses_dialy/horizontal/screen/write.dart';
+import 'package:five_senses_dialy/horizontal/screen/cover/write/basic_data_page.dart';
+import 'package:five_senses_dialy/horizontal/screen/cover/write/hand_written.dart';
+import 'package:five_senses_dialy/horizontal/screen/cover/write/image_page.dart';
+import 'package:five_senses_dialy/horizontal/screen/cover/write/result.dart';
+import 'package:five_senses_dialy/horizontal/screen/cover/write/tag.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
@@ -13,14 +12,10 @@ class NewPage extends ConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final List<TabInfo> tabs = [
-      TabInfo(
-        '基本情報',
-        Basic(),
-      ),
-      TabInfo('資料1', TagPage()),
-      TabInfo('資料2', ImagePage()),
+      TabInfo('タイトル', BasicData()),
+      TabInfo('文章', TagPage()),
+      TabInfo('写真', ImagePage()),
       TabInfo('手書き', Handwritten()),
-      TabInfo('記述', Write()),
     ];
     return DefaultTabController(
       length: tabs.length,

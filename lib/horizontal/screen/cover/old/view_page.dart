@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-class Write extends StatelessWidget {
-  const Write({Key? key}) : super(key: key);
+class ViewPage extends StatelessWidget {
+  const ViewPage({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {

@@ -1,56 +1,54 @@
-import 'package:five_senses_dialy/horizontal/screen/cover/basic.dart';
-import 'package:five_senses_dialy/horizontal/screen/cover/hand_written.dart';
-import 'package:five_senses_dialy/horizontal/screen/cover/result.dart';
-import 'package:five_senses_dialy/horizontal/screen/cover/tag.dart';
-import 'package:five_senses_dialy/horizontal/screen/write.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_riverpod/flutter_riverpod.dart';
 
-import 'cover/image_page.dart';
-
-class OldPage extends ConsumerWidget {
+class OldPage extends StatelessWidget {
   const OldPage({Key? key}) : super(key: key);
 
   @override
-  Widget build(BuildContext context, WidgetRef ref) {
-    final List<TabInfo> tabs = [
-      TabInfo(
-        '基本情報',
-        Basic(),
+  Widget build(BuildContext context) {
+    List<DropdownMenuItem<int>> _menuItems = [];
+    String choseValue = 'taste';
+
+    void itemOnChange(value) {
+      // _menuItems.add(DropdownMenuItem(value: '10', child: Text('味覚')));
+      // _menuItems.add(DropdownMenuItem(value: 'ear1', child: Text('嗅覚')));
+      // _menuItems.add(DropdownMenuItem(value: 'hand1', child: Text('触覚')));
+      _menuItems = [DropdownMenuItem(value: 10, child: Text(10.toString()))];
+      _menuItems = [DropdownMenuItem(value: 1, child: Text(1.toString()))];
+      _menuItems = [DropdownMenuItem(value: 12, child: Text(12.toString()))];
+    }
+
+    return Scaffold(
+      appBar: AppBar(
+        title: Text('閲覧ページ'),
       ),
-      TabInfo('資料1', TagPage()),
-      TabInfo('資料2', ImagePage()),
-      TabInfo('手書き', Handwritten()),
-      TabInfo('記述', Write()),
-      TabInfo('まとめ', Result()),
-    ];
-    return DefaultTabController(
-      length: tabs.length,
-      child: Scaffold(
-        appBar: AppBar(
-          bottom: PreferredSize(
-            preferredSize: Size.fromHeight(30.0),
-            child: TabBar(
-              isScrollable: true,
-              labelColor: Colors.black38,
-              indicatorColor: Colors.black38,
-              tabs: tabs.map((TabInfo tab) {
-                return Tab(text: tab.label);
-              }).toList(),
-            ),
-          ),
-          title: Text('Tab'),
-        ),
-        body: TabBarView(
-          children: tabs.map((tab) => tab.widget).toList(),
-        ),
+      body: Column(
+        children: [
+          Text('閲覧データをここに表示'),
+          RadioListTile(
+              title: Text('味覚'),
+              value: 'taste',
+              groupValue: choseValue,
+              onChanged: null),
+          RadioListTile(
+              title: Text('触覚'),
+              value: 'hand',
+              groupValue: choseValue,
+              onChanged: null),
+          RadioListTile(
+              title: Text('嗅覚'),
+              value: 'nose',
+              groupValue: choseValue,
+              onChanged: null),
+          RadioListTile(
+              title: Text('聴覚'),
+              value: 'ear',
+              groupValue: choseValue,
+              onChanged: null),
+          DropdownButton(items: [
+            DropdownMenuItem(child: Text('味覚')),
+          ], value: null, onChanged: itemOnChange)
+        ],
       ),
     );
   }
-}
-
-class TabInfo {
-  String label;
-  Widget widget;
-  TabInfo(this.label, this.widget);
 }

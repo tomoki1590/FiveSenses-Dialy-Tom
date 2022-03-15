@@ -20,7 +20,7 @@ class fiveSensesDiary extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: "FiveSensesDiary",
-      home: CoverPage(),
+      home: Login(),
     );
   }
 }

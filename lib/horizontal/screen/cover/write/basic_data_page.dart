@@ -1,4 +1,3 @@
-import 'package:five_senses_dialy/horizontal/screen/cover/tag.dart';
 import 'package:flutter/material.dart';
 
 class BasicData extends StatelessWidget {
@@ -7,9 +6,6 @@ class BasicData extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text('基本情報'),
-      ),
       body: Column(
         children: [
           Padding(
@@ -19,13 +15,13 @@ class BasicData extends StatelessWidget {
                 focusedBorder: OutlineInputBorder(
                   borderRadius: BorderRadius.circular(16),
                   borderSide: const BorderSide(
-                    color: Colors.green,
+                    color: Colors.red,
                     width: 5.0,
                   ),
                 ),
                 labelStyle: TextStyle(
                   fontSize: 15,
-                  color: Colors.green,
+                  color: Colors.blue,
                 ),
                 labelText: 'タイトル',
                 floatingLabelStyle: const TextStyle(fontSize: 15),
@@ -70,40 +66,12 @@ class BasicData extends StatelessWidget {
               onTap: () {},
             ),
           ),
-          Padding(
-            padding: const EdgeInsets.all(30.0),
-            child: TextFormField(
-              decoration: InputDecoration(
-                focusedBorder: OutlineInputBorder(
-                  borderRadius: BorderRadius.circular(16),
-                  borderSide: const BorderSide(
-                    color: Colors.green,
-                    width: 5.0,
-                  ),
-                ),
-                labelStyle: const TextStyle(
-                  fontSize: 15,
-                  color: Colors.green,
-                ),
-                labelText: '作成チーム名',
-                floatingLabelStyle: const TextStyle(fontSize: 15),
-                enabledBorder: OutlineInputBorder(
-                  borderRadius: BorderRadius.circular(16),
-                  borderSide: BorderSide(
-                    color: Colors.green[100]!,
-                    width: 5.0,
-                  ),
-                ),
-              ),
-            ),
-          ),
           Container(
             child: FloatingActionButton.extended(
               onPressed: () {
-                Navigator.push(context,
-                    MaterialPageRoute(builder: (context) => TagPage()));
+                DefaultTabController.of(context)!.animateTo(1);
               },
-              label: Text('検索タグを書く'),
+              label: Text('本文作成'),
             ),
           )
         ],
