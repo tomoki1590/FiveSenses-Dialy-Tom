@@ -1,10 +1,7 @@
 import 'package:firebase_core/firebase_core.dart';
 import 'package:five_senses_dialy/login/login.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-
-import 'horizontal/screen/cover_page.dart';
 
 main()async {
   WidgetsFlutterBinding.ensureInitialized();

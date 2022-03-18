@@ -11,6 +11,7 @@ class NewPage extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
+     
     final List<TabInfo> tabs = [
       TabInfo('タイトル', BasicData()),
       TabInfo('文章', TagPage()),
